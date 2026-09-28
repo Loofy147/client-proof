@@ -1,0 +1,18 @@
+{
+  "name": "mcp-rest-bridge-proof",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check src/server.js && node --check src/http.js && node --check src/stdio.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "2.1.0",
+    "@modelcontextprotocol/server": "2.1.0",
+    "zod": "4.6.5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
