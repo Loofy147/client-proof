@@ -15,6 +15,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install --ignore-scripts
-      - run: npm run check
-      - run: npm test
+      - name: Verify MCP REST proof
+        working-directory: proofs/MCP-REST-001
+        run: npm install --ignore-scripts && npm run check && npm test
+      - name: Verify API integration proof
+        working-directory: proofs/API-INTEGRATION-001
+        run: npm install --ignore-scripts && npm run check && npm test
+      - name: Verify workflow proof
+        working-directory: proofs/WORKFLOW-001
+        run: npm install --ignore-scripts && npm run check && npm test
