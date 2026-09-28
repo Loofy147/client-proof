@@ -2,20 +2,21 @@
 
 Public index of client-facing engineering evidence.
 
-| ID | Proof | Problem class | Status | Evidence |
-|---|---|---|---|---|
-| MCP-REST-001 | MCP → REST Integration | Expose a third-party REST resource through MCP | PORTFOLIO PROOF | [Open](./proofs/MCP-REST-001/) |
+| ID | Proof | Problem class | Status |
+|---|---|---|---|
+| MCP-REST-001 | MCP → REST Integration | Expose a third-party REST resource through MCP | PORTFOLIO PROOF |
+| API-INTEGRATION-001 | Webhook → REST Integration | Validate, normalize and deliver API events | PORTFOLIO PROOF |
+| WORKFLOW-001 | Verified Workflow Conversion | Turn a repetitive workflow into an explicit action + verification path | PORTFOLIO PROOF |
 
 ## Selection rule
 
 Each proof exists to support a concrete commercial problem. A proof is not added merely because it is an interesting technical project.
 
-## Expansion candidates
+## Next proof families
 
-- API-INTEGRATION-001 — REST/API integration variant
-- WORKFLOW-001 — workflow automation
-- AGENT-RUNTIME-001 — bounded agent/runtime execution
-- DATA-PIPE-001 — structured data transformation
-- BROWSER-AUTO-001 — browser automation
+- AUTOMATION-REPAIR-001 — repair and stabilize an existing automation.
+- AGENT-RUNTIME-001 — bounded agent/runtime execution.
+- DATA-PIPE-001 — structured data transformation.
+- BROWSER-AUTO-001 — browser automation.
 
-These are placeholders until each has evidence satisfying `PROOF_STANDARD.md`.
+Each remains OPEN until its implementation and reproducible evidence satisfy `PROOF_STANDARD.md`.
