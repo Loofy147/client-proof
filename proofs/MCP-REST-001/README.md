@@ -1,25 +1,23 @@
 # MCP-REST-001 — MCP → REST Integration
 
-**Status:** PORTFOLIO PROOF
+**Status:** Portfolio proof
 
 ## Client problem
 
-A third-party REST API needs to be exposed to an MCP-capable client through a small, typed integration surface.
+Expose a third-party REST resource through an MCP-capable client with a small, typed integration surface.
 
-Typical Phase 1 requirements:
+## What is included
+
+- Node.js MCP server;
+- typed and validated tool input;
 - REST endpoint mapping;
-- API-key or Bearer authentication;
-- typed tool inputs;
-- structured JSON responses;
-- explicit HTTP error handling;
-- test coverage;
-- lightweight Node.js deployment.
+- optional Bearer authentication;
+- structured JSON propagation;
+- explicit HTTP error propagation;
+- an in-process MCP client integration test;
+- HTTP and stdio entry points.
 
-## What exists
-
-A focused Node.js MCP→REST bridge was implemented as a proof artifact.
-
-Flow:
+## Architecture
 
 ```
 MCP client
@@ -37,43 +35,32 @@ authentication
 structured result / explicit error
 ```
 
-## Evidence
+## Run
 
-The implementation and integration test currently live in the research build repository:
+From this directory:
 
-- [Server implementation](https://github.com/Loofy147/Open-System-One/tree/research/self-conversion-primitive-v0/examples/mcp-rest-bridge)
-- [Client-facing proposal](https://github.com/Loofy147/Open-System-One/blob/research/self-conversion-primitive-v0/commercial/2026-09-28/PROPOSAL_MCP_REST_BRIDGE.md)
-
-The proof includes typed input validation, REST request construction, optional Bearer credential placement, structured JSON propagation, and explicit REST error propagation.
-
-## Verification boundary
-
-The artifact is a portfolio proof, not a named customer deployment.
-
-The integration test is designed around a deterministic in-process REST mock. It demonstrates the integration path without sending customer credentials or data to a third-party service.
-
-The proof should be upgraded only after the repository contains reproducible local/CI execution evidence for the exact committed version.
-
-## Commercial scope
-
-A corresponding paid Phase 1 can be scoped as:
-
-```
-API brief
-  → endpoint/schema mapping
-  → MCP tool implementation
-  → authentication boundary
-  → success/error tests
-  → deployment configuration
-  → handoff evidence
+```bash
+npm install
+npm run check
+npm test
 ```
 
-The implementation should remain narrow until the client's actual API requirements are known.
+The tests use a deterministic in-process REST mock. They do not contact customer systems.
 
-## What this proof does not claim
+## Commercial mapping
 
-- prior customer delivery for this exact integration;
-- production readiness for every REST API;
-- unrestricted autonomous behavior;
-- successful deployment to a customer's infrastructure.
+For a paid Phase 1, the example resource can be replaced with the client's actual REST endpoints and schemas, with authentication, error handling, tests, deployment configuration, and handoff evidence scoped to the supplied brief.
 
+## Evidence boundary
+
+This is a portfolio proof, not a named customer deployment. No customer delivery is claimed by this repository.
+
+The repository is intentionally self-contained so clients can inspect the implementation without accessing internal research or proposal repositories.
+
+## Files
+
+- `src/server.js` — MCP tool and REST mapping.
+- `src/http.js` — HTTP entry point.
+- `src/stdio.js` — stdio entry point.
+- `test/integration.test.js` — MCP client + REST integration tests.
+- `package.json` — minimal runtime/test dependencies.
