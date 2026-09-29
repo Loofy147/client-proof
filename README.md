@@ -51,3 +51,8 @@ Research, proposal strategy, prospect tracking, and unfinished architecture rema
 ## First proof
 
 [MCP-REST-001](./proofs/MCP-REST-001/README.md)
+
+
+## Commercial services
+
+See [`SERVICES.md`](./SERVICES.md) for bounded integration, workflow repair, and MCP/AI integration scopes.
